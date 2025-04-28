@@ -1,3 +1,8 @@
+1. Add the Dataset to your directory
+2. Run DataPreparation to create train, val and experiment sub-datasets
+3. Run DecisionTree to create the decision tree model
+
+
 Python 3.8
 
 pip install adversarial-robustness-toolbox
