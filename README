@@ -1,0 +1,8 @@
+Python 3.8
+
+pip install adversarial-robustness-toolbox
+pip install packaging
+pip install transformers
+pip install torch
+pip install tqdm
+pip install transformers[torch]
