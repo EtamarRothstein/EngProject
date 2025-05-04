@@ -37,11 +37,11 @@ X_experiment = X_experiment.reindex(columns=train_cols, fill_value=0)
 model = DecisionTreeClassifier(random_state=42)
 model.fit(X_train, y_train)
 
-# **Save the trained model**
+# Save the trained model
 joblib.dump(model, 'decision_tree_model.joblib')
 print("Trained decision tree model saved as 'decision_tree_model.joblib'")
 
-# **Save the training columns**
+# Save the training columns
 joblib.dump(train_cols, 'train_cols.joblib')
 print("Training columns saved as 'train_cols.joblib'")
 
@@ -64,11 +64,16 @@ comparison_df = pd.DataFrame({'true_income': y_true_series, 'predicted_income': 
 
 # Identify correctly predicted examples
 correct_predictions_df = df_experiment[comparison_df['true_income'] == comparison_df['predicted_income']].copy()
-
-# Identify incorrectly predicted examples
 incorrect_predictions_df = df_experiment[comparison_df['true_income'] != comparison_df['predicted_income']].copy()
 
-print("DataFrame of correctly predicted examples:")
+# Save correct and incorrect predictions to CSV
+correct_predictions_df.to_csv('correct_predictions_DT.csv', index=False)
+incorrect_predictions_df.to_csv('incorrect_predictions_DT.csv', index=False)
+
+print("\nCorrectly predicted examples saved to 'correct_predictions_DT.csv'")
+print("Incorrectly predicted examples saved to 'incorrect_predictions_DT.csv'")
+
+print("\nDataFrame of correctly predicted examples:")
 print(correct_predictions_df.head())
 print(f"\nShape of correctly predicted DataFrame: {correct_predictions_df.shape}")
 
