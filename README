@@ -11,3 +11,5 @@ pip install transformers
 pip install torch
 pip install tqdm
 pip install transformers[torch]
+pip install git+https://github.com/facebookresearch/attack-tabular.git
+

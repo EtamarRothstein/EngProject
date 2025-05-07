@@ -73,7 +73,7 @@ df_less_val, df_less_exp = train_test_split(temp_less, test_size=experiment_rati
 # Concatenate the train sets
 df_train = pd.concat([df_greater_train, df_less_train]).sample(frac=1, random_state=42).reset_index(drop=True)
 df_validation = pd.concat([df_greater_val, df_less_val]).sample(frac=1, random_state=42).reset_index(drop=True)
-df_experiment = pd.concat([df_greater_val, df_less_exp]).sample(frac=1, random_state=42).reset_index(drop=True)
+df_experiment = pd.concat([df_greater_exp, df_less_exp]).sample(frac=1, random_state=42).reset_index(drop=True)
 
 print("\nShape of the training dataset:", df_train.shape)
 print("Value counts of 'income' in the training set:\n", df_train['income'].value_counts())
