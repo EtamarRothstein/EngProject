@@ -79,7 +79,6 @@ for file in ["incorrect_predictions_DT.csv", "correct_predictions_DT.csv"]:
 # You can write this to a file if needed
 # with open("correlation_dict_int.json", "w") as file:
 #     file.write(json_data)
-new
 # print(json_data)
 
 
