@@ -45,3 +45,18 @@ def evaluate_DT(data_point):
 
     # Return the single prediction
     return prediction[0]
+
+
+def get_next_step_toward_original(val_start, val_goal, ordered_vals):
+    try:
+        idx_start = ordered_vals.index(val_start)
+        idx_goal = ordered_vals.index(val_goal)
+    except ValueError:
+        return val_start  # If either value not found, do nothing
+
+    if idx_start == idx_goal:
+        return val_start
+    elif idx_start > idx_goal:
+        return ordered_vals[idx_start - 1]
+    else:
+        return ordered_vals[idx_start + 1]

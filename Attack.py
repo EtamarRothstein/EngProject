@@ -48,7 +48,7 @@ while evaluate_DT(adversarial_datapoint) == true_label and n < max_attempts and 
 if evaluate_DT(adversarial_datapoint) != true_label:
     print("\nInitial adversarial example found!")
     print("Original Numerical Features:\n", original_datapoint[numerical_features])
-    print("Initial Adversarial Numerical Features:\n", adversarial_datapoint[numerical_features])
+    print("\nInitial Adversarial Numerical Features:\n", adversarial_datapoint[numerical_features])
 
     at_boundary = {feature: False for feature in numerical_features}
 
