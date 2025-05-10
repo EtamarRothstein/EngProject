@@ -1,10 +1,35 @@
-1. Add the Dataset to your directory
-2. Run DataPreparation to create train, val and experiment sub-datasets
-3. Run DecisionTree to create the decision tree model
+# EngProject
 
+Senior year engineering project focusing on adversarial attacks on machine learning models, particularly in tabular data contexts.
 
-Python 3.8
+## Overview
 
+This project explores the generation and analysis of adversarial examples in tabular datasets. It includes implementations of various models and attack strategies to assess the robustness of classifiers against adversarial perturbations.
+
+## Project Structure
+
+- `Datasets/`: Contains the datasets used for training and evaluation.
+- `Models/`: Includes trained models and related artifacts.
+- `Corr_Attack.py`: Script implementing correlation-based adversarial attacks.
+- `DataPreparation.py`: Prepares and splits the dataset into training, validation, and experimental subsets.
+- `GBT.py`: Implements Gradient Boosted Trees model.
+- `correlation_analysis.py`: Analyzes feature correlations within the dataset.
+- `evaluation_funcs.py`: Contains evaluation functions for model performance assessment.
+- `README.md`: Provides instructions and information about the project.
+
+## Setup Instructions
+
+1. **Add the Dataset**: Place your dataset in the appropriate directory.
+2. **Data Preparation**: Run `DataPreparation.py` to create training, validation, and experimental subsets.
+3. **Model Training**: Execute `DecisionTree.py` to train the decision tree model.
+
+## Requirements
+
+Ensure you have Python 3.8 installed. Install the necessary packages using pip:
+
+**Partial
+
+```bash
 pip install adversarial-robustness-toolbox
 pip install packaging
 pip install transformers
@@ -12,4 +37,5 @@ pip install torch
 pip install tqdm
 pip install transformers[torch]
 pip install git+https://github.com/facebookresearch/attack-tabular.git
+
 
