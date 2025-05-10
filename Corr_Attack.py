@@ -13,7 +13,7 @@ import json
 number_of_evaluations = 0
 
 # Load dataset of datapoints the model predicts correctly
-df = pd.read_csv('correct_predictions_DT.csv')
+df = pd.read_csv('Datasets/correct_predictions_DT.csv')
 
 label_column = 'income'
 

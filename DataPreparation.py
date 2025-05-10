@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-df_original = pd.read_csv('adult.csv')
+df_original = pd.read_csv('Datasets/adult.csv')
 initial_rows = df_original.shape[0]
 rows_discarded = 0
 
@@ -86,8 +86,8 @@ print("Value counts of 'income' in the experimentation set:\n", df_experiment['i
 
 
 # Save the split DataFrames to CSV files
-df_train.to_csv('train_data.csv', index=False)
-df_validation.to_csv('validation_data.csv', index=False)
-df_experiment.to_csv('experiment_data.csv', index=False)
+df_train.to_csv('Datasets/train_data.csv', index=False)
+df_validation.to_csv('Datasets/validation_data.csv', index=False)
+df_experiment.to_csv('Datasets/experiment_data.csv', index=False)
 
 print("Split DataFrames saved successfully!")

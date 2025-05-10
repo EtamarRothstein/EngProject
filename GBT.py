@@ -2,9 +2,9 @@ import ydf
 import pandas as pd
 
 # Load the saved DataFrames
-df_train = pd.read_csv('train_data.csv')
-df_validation = pd.read_csv('validation_data.csv')
-df_experiment = pd.read_csv('experiment_data.csv')
+df_train = pd.read_csv('Datasets/train_data.csv')
+df_validation = pd.read_csv('Datasets/validation_data.csv')
+df_experiment = pd.read_csv('Datasets/experiment_data.csv')
 
 # Ensure the target column 'income' is treated as a string (for classification)
 df_train["income"] = df_train["income"].astype(str)

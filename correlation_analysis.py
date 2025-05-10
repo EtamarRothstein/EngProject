@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import json
 
 # ---- Step 1: Load and prepare the main dataset ----
-df_main = pd.read_csv("experiment_data.csv")
+df_main = pd.read_csv("Datasets/experiment_data.csv")
 df_main['income_binary'] = df_main['income'].apply(lambda x: 1 if '>50K' in x else 0)
 
 target = df_main['income_binary']
@@ -28,10 +28,10 @@ for col in features_main.columns:
     correlation_dict[col] = dict(sorted(value_corrs.items(), key=lambda x: x[1], reverse=True))
 
 # ---- Print sorted value-correlation lists ----
-# for feature, val_corrs in correlation_dict.items():
-#     print(f"\nFeature: {feature}")
-#     for val, corr in val_corrs.items():
-#         print(f"  {val}: {corr:.4f}")
+for feature, val_corrs in correlation_dict.items():
+    print(f"\nFeature: {feature}")
+    for val, corr in val_corrs.items():
+        print(f"  {val}: {corr:.4f}")
 
 
 # ---- Step 3: Function to compute row score ----
@@ -45,7 +45,7 @@ def compute_score(df, corr_dict):
     return df.apply(row_score, axis=1)
 
 # ---- Step 4: Apply to new datasets ----
-for file in ["incorrect_predictions_DT.csv", "correct_predictions_DT.csv"]:
+for file in ["Datasets/incorrect_predictions_DT.csv", "Datasets/correct_predictions_DT.csv"]:
     df = pd.read_csv(file)
     df['correlation_score'] = compute_score(df, correlation_dict)
     avg_abs_score = df['correlation_score'].abs().mean()

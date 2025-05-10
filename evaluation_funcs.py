@@ -4,7 +4,7 @@ import joblib
 
 # Load the training columns (we'll load the model inside the function)
 try:
-    train_cols = joblib.load('train_cols.joblib')
+    train_cols = joblib.load('Models/train_cols.joblib')
 except FileNotFoundError:
     print("Error: 'train_cols.joblib' not found. Make sure the model training script has been run.")
     train_cols = None
@@ -26,7 +26,7 @@ def evaluate_DT(data_point):
 
     # Load the Decision Tree model
     try:
-        model = joblib.load('decision_tree_model.joblib')
+        model = joblib.load('Models/decision_tree_model.joblib')
     except FileNotFoundError:
         print("Error: 'decision_tree_model.joblib' not found. Make sure the model training script has been run.")
         return None
